@@ -9,6 +9,8 @@ const StyledUl = styled.ul`
   padding: 0;
 
   li {
+    display: flex;
+    justify-content: space-between;
     margin: none;
     padding-left: 1em;
     list-style-position: inside;
@@ -19,10 +21,10 @@ const StyledUl = styled.ul`
   }
 `
 
-const TodoList = ({ todos, onTodoClick }) => (
+const TodoList = ({ todos, onTodoClick, onDeleteClick }) => (
   <StyledUl>
     {todos.map((todo, index) => (
-      <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />
+      <Todo key={index} {...todo} onClick={() => onTodoClick(index)} onDeleteClick={() => onDeleteClick(index)} />
     ))}
   </StyledUl>
 )

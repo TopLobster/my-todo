@@ -38,7 +38,9 @@ function todos (state = [], action) {
         return todo
       })
     case DELETE_TODO:
-      return [...state].splice(action.index, 1)
+      const tmp = [...state]
+      tmp.splice(action.index, 1)
+      return tmp
     default:
       return state
   }
